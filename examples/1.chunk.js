@@ -95,7 +95,7 @@ webpackJsonp([1],{
 	        core_1.Component({
 	            selector: 'chart-details-wrapper',
 	            styles: [__webpack_require__(99)],
-	            template: "<div class=\"wrapper\">\n                <h2>{{chartType}}</h2>\n                <div>\n                  <chart-description></chart-description>\n                  <chart-details [componentData]=\"componentData\"></chart-details>\n                  <chart-editor></chart-editor>\n                </div>\n                <chart-code></chart-code>\n              </div>\n              "
+	            template: "<div class=\"wrapper container\">\n                    <div class=\"back-btn\">\n                        <span class=\"glyphicon glyphicon-backward\" aria-hidden=\"true\"></span>\n                        <a [routerLink]=\"'/dashboard'\">Back</a>\n                    </div>\n                <h2>{{chartType}}</h2>\n                <div>\n                  <chart-description></chart-description>\n                  <chart-details [componentData]=\"componentData\"></chart-details>\n                  <chart-editor></chart-editor>\n                </div>\n                <chart-code></chart-code>\n              </div>\n              "
 	        }), 
 	        __metadata('design:paramtypes', [router_1.Router, router_1.ActivatedRoute, common_service_1.CommonService])
 	    ], ChartDetailsWrapper);
@@ -129,7 +129,7 @@ webpackJsonp([1],{
 
 
 	// module
-	exports.push([module.id, "chart-details, chart-editor {\n    display: inline-block;\n    vertical-align: top;\n    line-height: 2.2;\n    margin: 10px;\n}\n\nchart-description {\n    padding-left: 20px;\n    display: block;\n    margin: 60px 0;\n}\n.wrapper {\n    background: #f8f8f8;\n    padding: 20px;\n}\n", ""]);
+	exports.push([module.id, "chart-details, chart-editor {\n    display: inline-block;\n    vertical-align: top;\n    line-height: 2.2;\n    margin: 10px;\n}\n\nchart-description {\n    padding-left: 20px;\n    display: block;\n    margin: 60px 0;\n}\n.wrapper {\n    background: #f8f8f8;\n    padding: 20px;\n}\n\n.back-btn {\n    float: right;\n    color: #337ab7;\n    font-size: 16px;\n    margin-right: 80px;\n}\n\n.back-btn:hover {\n    border-bottom: 1px solid #337ab7;\n}\n\n.back-btn a:hover {\n    text-decoration: none;\n}", ""]);
 
 	// exports
 
