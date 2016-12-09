@@ -6,7 +6,11 @@ import { EntryComponents } from '../../shared/components-list';
 @Component({
     selector: 'chart-details-wrapper',
     styleUrls: ['./chart-details-wrapper.css'],
-    template: `<div class="wrapper">
+    template: `<div class="wrapper container">
+                    <div class="back-btn">
+                        <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+                        <a [routerLink]="'/dashboard'">Back</a>
+                    </div>
                 <h2>{{chartType}}</h2>
                 <div>
                   <chart-description></chart-description>
