@@ -1,0 +1,16 @@
+chart-details, chart-editor {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 2.2;
+    margin: 10px;
+}
+
+chart-description {
+    padding-left: 20px;
+    display: block;
+    margin: 60px 0;
+}
+.wrapper {
+    background: #f8f8f8;
+    padding: 20px;
+}

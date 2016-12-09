@@ -1,0 +1,26 @@
+<div>
+    <h3>Code</h3>
+    <ul class="nav nav-pills">
+        <li (click)="showTab('ts')" [ngClass]="{'active': isCurrentTab('ts')}"><a data-toggle="pill">Typescript</a></li>
+        <li (click)="showTab('css')" [ngClass]="{'active': isCurrentTab('css')}"><a data-toggle="pill">CSS</a></li>
+        <!--<li (click)="showTab('html')" [ngClass]="{'active': isCurrentTab('html')}"><a data-toggle="pill">HTML</a></li>-->
+    </ul>
+    <br>
+    <div class="tab-content">
+        <button class="button copy-to-clipboard primary" (mousedown)="copyToClipboard($event)" (blur)="blurAction($event)" [hidden]="checkVisibility()">Copy to clipboard</button>
+        <div class='code-wrapper' [hidden]="!isCurrentTab('ts')">
+            <pre id="ts" class="brush: js">{{typescriptCode}}</pre>
+        </div>
+        <div class='code-wrapper' [hidden]="!isCurrentTab('css')">
+            <pre id="css">{{cssCode}}</pre>
+        </div>
+        <div class='code-wrapper' [hidden]="!isCurrentTab('html')">
+            <pre id="html">{{htmlCode}}</pre>
+        </div>
+        <div [hidden]="!isCurrentTab('customize')">
+
+        </div>
+    </div>
+
+    <textarea id="code-content" class="code-content"></textarea>
+</div>

@@ -4830,10 +4830,9 @@ webpackJsonp([0],[
 	            styles: [__webpack_require__(65)],
 	            template: "<div id=\"line-chart-div\"></div>"
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof common_service_1.CommonService !== 'undefined' && common_service_1.CommonService) === 'function' && _a) || Object])
+	        __metadata('design:paramtypes', [common_service_1.CommonService])
 	    ], LineChartComponent);
 	    return LineChartComponent;
-	    var _a;
 	}());
 	exports.LineChartComponent = LineChartComponent;
 	
@@ -4876,13 +4875,13 @@ webpackJsonp([0],[
 	            case 'bar-chart':
 	                return this.getTemperature(chartType);
 	            case 'stacked-bar-chart':
-	            case 'steup-bar-chart':
+	            case 'stepup-bar-chart':
 	                return this.getForestAreaCover(chartType);
 	            case 'donut-chart':
 	            case 'pie-chart':
 	            case 'polar-area-chart':
 	                return this.getHorticultureProduction(chartType);
-	            default:
+	            case 'waterfall-chart':
 	                return this.getData(chartType);
 	        }
 	    };
@@ -5027,7 +5026,7 @@ webpackJsonp([0],[
 	            }
 	        };
 	        this.setCachedData(graphdef, chartType);
-	        return graphdef;
+	        return new Observable_1.Observable(function (observer) { observer.next(graphdef); observer.complete(); });
 	    };
 	    CommonService.prototype.extractDetails = function (res) {
 	        return res._body;
@@ -5085,15 +5084,27 @@ webpackJsonp([0],[
 	                return 'A doughnut Chart is a circular chart with a blank center. Chart is divided into sectors, each sector (and consequently its central angle and area), ' +
 	                    'is proportional to the quantity it represents. Together, the sectors create a full disk.';
 	            case 'waterfall-chart':
-	                return '';
-	            case 'step-up-bar-chart':
-	                return '';
+	                return 'A waterfall chart is a form of data visualization that helps in understanding the cumulative effect of sequentially introduced positive or negative values. ' +
+	                    'The waterfall chart is also known as a flying bricks chart or Mario chart due to the apparent suspension of columns (bricks) in mid-air. ' +
+	                    'Often in finance, it will be referred to as a bridge.';
+	            case 'stepup-bar-chart':
+	                return 'Step charts show changes that happen occasionally.  For instance, the US Prime Rate that is based off of the Fed Funds Target Rate, but it doesn’t change that often.  ' +
+	                    'It has only changed 43 times since the Year 2000, where a normal line chart might change quarterly, monthly or even daily.';
 	            case 'polar-area-chart':
-	                return '';
+	                return 'The polar area chart is similar to a usual pie chart, except sectors are equal angles and differ rather in how far each sector extends from the center of the circle. ' +
+	                    'The polar area chart is used to plot cyclic phenomena (e.g., count of deaths by month). ' +
+	                    'For example, if the count of deaths in each month for a year are to be plotted then there will be 12 sectors (one per month) all with the same angle of 30 degrees each. ' +
+	                    'The radius of each sector would be proportional to the square root of the death count for the month, so the area of a sector represents the number of deaths in a month. ' +
+	                    'If the death count in each month is subdivided by cause of death, it is possible to make multiple comparisons on one diagram, as is seen in the polar area diagram famously developed by Florence Nightingale.';
 	            case 'percent-bar-chart':
-	                return '';
+	                return 'Sub-divided bar chart may be drawn on percentage basis. ' +
+	                    'To draw sub-divided bar chart on percentage basis, we express each component as the percentage of its respective total. ' +
+	                    'In drawing percentage bar chart, bars of length equal to 100 for each class are drawn at first step and sub-divided in the ' +
+	                    'proportion of the percentage of their component in the second step. The diagram so obtained is called percentage bar chart. ' +
+	                    'This type of chart is useful to make comparison in components holding the difference of total constant.';
 	            case 'percent-area-chart':
-	                return '';
+	                return 'Sub-divided area chart may be drawn on percentage basis. ' +
+	                    'To draw sub-divided area chart on percentage basis, we express each component as the percentage of its respective total. ';
 	        }
 	        return 'Description for: ' + chartType;
 	    };
@@ -5115,7 +5126,7 @@ webpackJsonp([0],[
 	                return 'Percent Area Chart';
 	            case 'percent-bar-chart':
 	                return 'Percent Bar Chart';
-	            case 'steup-bar-chart':
+	            case 'stepup-bar-chart':
 	                return 'Step Up Bar Chart';
 	            case 'polar-area-chart':
 	                return 'Polar Area Chart';
@@ -5217,10 +5228,9 @@ webpackJsonp([0],[
 	    };
 	    CommonService = __decorate([
 	        core_1.Injectable(), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
+	        __metadata('design:paramtypes', [http_1.Http])
 	    ], CommonService);
 	    return CommonService;
-	    var _a;
 	}());
 	exports.CommonService = CommonService;
 	
@@ -5396,10 +5406,9 @@ webpackJsonp([0],[
 	            styles: [__webpack_require__(69)],
 	            template: "<div id=\"area-div\"></div>"
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof common_service_1.CommonService !== 'undefined' && common_service_1.CommonService) === 'function' && _a) || Object])
+	        __metadata('design:paramtypes', [common_service_1.CommonService])
 	    ], AreaChartComponent);
 	    return AreaChartComponent;
-	    var _a;
 	}());
 	exports.AreaChartComponent = AreaChartComponent;
 	
@@ -5502,10 +5511,9 @@ webpackJsonp([0],[
 	            styles: [__webpack_require__(72)],
 	            template: "<div id=\"stacked-bar-div\"></div>"
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof common_service_1.CommonService !== 'undefined' && common_service_1.CommonService) === 'function' && _a) || Object])
+	        __metadata('design:paramtypes', [common_service_1.CommonService])
 	    ], StackedBarChartComponent);
 	    return StackedBarChartComponent;
-	    var _a;
 	}());
 	exports.StackedBarChartComponent = StackedBarChartComponent;
 	
@@ -5612,10 +5620,9 @@ webpackJsonp([0],[
 	            styles: [__webpack_require__(75)],
 	            template: "<div id=\"percent-bar-div\"></div>"
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof common_service_1.CommonService !== 'undefined' && common_service_1.CommonService) === 'function' && _a) || Object])
+	        __metadata('design:paramtypes', [common_service_1.CommonService])
 	    ], PercentBarChartComponent);
 	    return PercentBarChartComponent;
-	    var _a;
 	}());
 	exports.PercentBarChartComponent = PercentBarChartComponent;
 	
@@ -5685,6 +5692,9 @@ webpackJsonp([0],[
 	            dimension: {
 	                height: 200,
 	                width: 400
+	            },
+	            axis: {
+	                opacity: 0
 	            }
 	        };
 	        if (this.compress) {
@@ -5722,10 +5732,9 @@ webpackJsonp([0],[
 	            styles: [__webpack_require__(78)],
 	            template: "<div id=\"percent-area-div\"></div>"
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof common_service_1.CommonService !== 'undefined' && common_service_1.CommonService) === 'function' && _a) || Object])
+	        __metadata('design:paramtypes', [common_service_1.CommonService])
 	    ], PercentAreaChartComponent);
 	    return PercentAreaChartComponent;
-	    var _a;
 	}());
 	exports.PercentAreaChartComponent = PercentAreaChartComponent;
 	
@@ -5826,10 +5835,9 @@ webpackJsonp([0],[
 	            styles: [__webpack_require__(81)],
 	            template: "<div id=\"pie-chart-div\"></div>"
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof common_service_1.CommonService !== 'undefined' && common_service_1.CommonService) === 'function' && _a) || Object])
+	        __metadata('design:paramtypes', [common_service_1.CommonService])
 	    ], PieChartComponent);
 	    return PieChartComponent;
-	    var _a;
 	}());
 	exports.PieChartComponent = PieChartComponent;
 	
@@ -5929,10 +5937,9 @@ webpackJsonp([0],[
 	            selector: 'donut-chart',
 	            template: "<div id=\"donut-div\"></div>"
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof common_service_1.CommonService !== 'undefined' && common_service_1.CommonService) === 'function' && _a) || Object])
+	        __metadata('design:paramtypes', [common_service_1.CommonService])
 	    ], DonutChartComponent);
 	    return DonutChartComponent;
-	    var _a;
 	}());
 	exports.DonutChartComponent = DonutChartComponent;
 	
@@ -5957,12 +5964,12 @@ webpackJsonp([0],[
 	    function WaterfallChartComponent(commonService) {
 	        this.commonService = commonService;
 	        this.uv = commonService.uv;
-	        this.data = commonService.getData("waterfall-chart");
 	    }
 	    WaterfallChartComponent.prototype.ngOnInit = function () {
-	        this.makeChart();
+	        var _this = this;
+	        this.commonService.getData("waterfall-chart").subscribe(function (data) { _this.makeChart(data); });
 	    };
-	    WaterfallChartComponent.prototype.makeChart = function () {
+	    WaterfallChartComponent.prototype.makeChart = function (data) {
 	        this.metaData = {
 	            meta: {
 	                position: '#waterfall-div'
@@ -5997,7 +6004,7 @@ webpackJsonp([0],[
 	                }
 	            };
 	        }
-	        this.uv.chart('Waterfall', this.data, this.metaData);
+	        this.uv.chart('Waterfall', data, this.metaData);
 	        this.commonService.setCachedMetaData('waterfall-chart', this.metaData);
 	    };
 	    __decorate([
@@ -6009,10 +6016,9 @@ webpackJsonp([0],[
 	            selector: 'waterfall-chart',
 	            template: "<div id=\"waterfall-div\"></div>"
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof common_service_1.CommonService !== 'undefined' && common_service_1.CommonService) === 'function' && _a) || Object])
+	        __metadata('design:paramtypes', [common_service_1.CommonService])
 	    ], WaterfallChartComponent);
 	    return WaterfallChartComponent;
-	    var _a;
 	}());
 	exports.WaterfallChartComponent = WaterfallChartComponent;
 	
@@ -6084,10 +6090,9 @@ webpackJsonp([0],[
 	            selector: 'polar-area-chart',
 	            template: "<div id=\"polar-area-div\"></div>"
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof common_service_1.CommonService !== 'undefined' && common_service_1.CommonService) === 'function' && _a) || Object])
+	        __metadata('design:paramtypes', [common_service_1.CommonService])
 	    ], PolarAreaChartComponent);
 	    return PolarAreaChartComponent;
-	    var _a;
 	}());
 	exports.PolarAreaChartComponent = PolarAreaChartComponent;
 	
@@ -6158,10 +6163,9 @@ webpackJsonp([0],[
 	            selector: 'stepup-bar-chart',
 	            template: "<div id=\"stepup-bar-div\"></div>"
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof common_service_1.CommonService !== 'undefined' && common_service_1.CommonService) === 'function' && _a) || Object])
+	        __metadata('design:paramtypes', [common_service_1.CommonService])
 	    ], StepupBarChartComponent);
 	    return StepupBarChartComponent;
-	    var _a;
 	}());
 	exports.StepupBarChartComponent = StepupBarChartComponent;
 	
@@ -6243,10 +6247,9 @@ webpackJsonp([0],[
 	            selector: 'bar-chart',
 	            template: "<div id=\"bar-div\"></div>"
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof common_service_1.CommonService !== 'undefined' && common_service_1.CommonService) === 'function' && _a) || Object])
+	        __metadata('design:paramtypes', [common_service_1.CommonService])
 	    ], BarChartComponent);
 	    return BarChartComponent;
-	    var _a;
 	}());
 	exports.BarChartComponent = BarChartComponent;
 	
@@ -6325,10 +6328,9 @@ webpackJsonp([0],[
 	            styles: [__webpack_require__(89)],
 	            template: "<div id=\"stacked-area-div\"></div>",
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof common_service_1.CommonService !== 'undefined' && common_service_1.CommonService) === 'function' && _a) || Object])
+	        __metadata('design:paramtypes', [common_service_1.CommonService])
 	    ], StackedAreaChartComponent);
 	    return StackedAreaChartComponent;
-	    var _a;
 	}());
 	exports.StackedAreaChartComponent = StackedAreaChartComponent;
 	
@@ -6561,7 +6563,7 @@ webpackJsonp([0],[
 /* 112 */
 /***/ function(module, exports) {
 
-	module.exports = "<header class=\"app-header\" style=\"background-color: #d8d8d8;cursor: pointer;\">\n\t<div class=\"w header attop\">\n\t\t\t<div class=\"c\">\n\t\t\t\t<div class=\"lf logo\">\n\t\t\t\t\t\t<a href=\"index.html\">\n\t\t\t\t\t\t\t<img src=\"uvCharts-Logo.png\" [routerLink]=\"'/dashboard'\"/>\n\t\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"nav rf\">\n\t\t\t\t\t<ul style=\"list-style:none;padding-top: 2px;display: inline-block;\">\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a href=\"../index.html#features\">Features</a>\n\t\t\t\t\t\t</li><li>\n\t\t\t\t\t\t\t<a href=\"../documentation.html\">Documentation</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t</ul>\n\t\t\t\t\t<a href=\"https://github.com/Imaginea/uvCharts/releases/download/1.1.0/uvcharts-1.1.0.zip\">\n\t\t\t\t\t\t<button class=\"download\">Download</button>\n\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<a target=\"_blank\" href=\"https://github.com/imaginea/uvCharts\"><img style=\"position: absolute; top: 0; right: 0; border: 0;\" src=\"https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png\" alt=\"Fork me on GitHub\"></a>\n\t\t\t\t</div>\n\t\t</div>\n</header>\n<main class=\"app-container\" style=\"margin:1.5em;\">\n\t<router-outlet></router-outlet>\n</main>\n"
+	module.exports = "<header class=\"app-header\" style=\"background-color: #d8d8d8;cursor: pointer;height: 63px;\">\n\t<div class=\"w header attop\">\n\t\t\t<div class=\"c\">\n\t\t\t\t<div class=\"lf logo\">\n\t\t\t\t\t\t<a href=\"index.html\">\n\t\t\t\t\t\t\t<img src=\"../assets/images/uvCharts-Logo.png\" [routerLink]=\"'/dashboard'\"/>\n\t\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"nav rf\">\n\t\t\t\t\t<ul style=\"list-style:none;padding-top: 2px;display: inline-block;\">\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a href=\"index.html#features\">Features</a>\n\t\t\t\t\t\t</li><li>\n\t\t\t\t\t\t\t<a href=\"documentation.html\">Documentation</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t</ul>\n\t\t\t\t\t<a href=\"https://github.com/Imaginea/uvCharts/releases/download/1.1.0/uvcharts-1.1.0.zip\">\n\t\t\t\t\t\t<button class=\"download\">Download</button>\n\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<a target=\"_blank\" href=\"https://github.com/imaginea/uvCharts\"><img style=\"position: absolute; top: 0; right: 0; border: 0;\" src=\"https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png\" alt=\"Fork me on GitHub\"></a>\n\t\t\t\t</div>\n\t\t</div>\n</header>\n<main class=\"app-container\" style=\"margin:1.5em;\">\n\t<router-outlet></router-outlet>\n</main>\n"
 
 /***/ },
 /* 113 */

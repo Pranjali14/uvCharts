@@ -1,0 +1,59 @@
+<div class="chart-editor-wrapper">
+    <div class='color-palette-wrapper'>
+        <h4>Choose Color Palette</h4>
+        <select (change)="setColorPalette($event.target.value)">
+            <option *ngFor ="let p of palette" [value]="p"> {{p}}</option>
+        </select>
+    </div>
+    <table class="table" *ngIf="graphData">
+        <thead>
+        <tr>
+            <th class="empty-cell"></th>
+            <th *ngFor="let category of graphData.categories">{{category}}</th>
+        </tr>
+        <!--<tr>-->
+        <!--<td class="axisLabelCell"></td>-->
+        <!--<td>Original</td>-->
+        <!--<td>Revised</td>-->
+        <!--<td>Original</td>-->
+        <!--<td>Revised</td>-->
+        <!--<td>Original</td>-->
+        <!--<td>Revised</td>-->
+        <!--</tr>-->
+        </thead>
+        <tbody>
+        <!--<tr *ngFor="let key of datasetKeys; let i=index;">-->
+        <!--<td>{{graphData.dataset[key][i].name}}</td>-->
+        <!--<td>{{graphData.dataset[key][i].value}}</td>-->
+        <!--<td><input type="text" value="{{graphData.dataset[key][i].value}}"></td>-->
+        <!--<td>{{graphData.dataset[key][i+1].value}}</td>-->
+        <!--<td><input type="text" value="{{graphData.dataset[key][i+1].value}}"></td>-->
+        <!--<td>{{graphData.dataset[key][i+2].value}}</td>-->
+        <!--<td><input type="text" value="{{graphData.dataset[key][i+2].value}}"></td>-->
+        <!--</tr>-->
+        <tr>
+            <td [attr.colspan]="datasetKeys.length + 1">
+                <ul class="category-data-list" *ngFor="let i of datasetKeys">
+                    <li class="category-data-list-item" *ngFor="let data of graphData.dataset[i]">
+                        <span class="category-data-name">{{data.name}}</span>
+                        <!--<span class="category-data-value">{{data.value}}</span>-->
+                        <span class="category-data-input-value">
+                            <input type="text" [(ngModel)]="data.value" (change)="onValueChange($event)" >
+                        </span>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="7">
+                <button class="reset-btn btn" (click)="resetAction($event)">Reset</button>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+
+</div>
+

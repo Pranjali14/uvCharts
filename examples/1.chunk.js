@@ -97,10 +97,9 @@ webpackJsonp([1],{
 	            styles: [__webpack_require__(99)],
 	            template: "<div class=\"wrapper\">\n                <h2>{{chartType}}</h2>\n                <div>\n                  <chart-description></chart-description>\n                  <chart-details [componentData]=\"componentData\"></chart-details>\n                  <chart-editor></chart-editor>\n                </div>\n                <chart-code></chart-code>\n              </div>\n              "
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof router_1.Router !== 'undefined' && router_1.Router) === 'function' && _a) || Object, (typeof (_b = typeof router_1.ActivatedRoute !== 'undefined' && router_1.ActivatedRoute) === 'function' && _b) || Object, (typeof (_c = typeof common_service_1.CommonService !== 'undefined' && common_service_1.CommonService) === 'function' && _c) || Object])
+	        __metadata('design:paramtypes', [router_1.Router, router_1.ActivatedRoute, common_service_1.CommonService])
 	    ], ChartDetailsWrapper);
 	    return ChartDetailsWrapper;
-	    var _a, _b, _c;
 	}());
 	exports.ChartDetailsWrapper = ChartDetailsWrapper;
 	
@@ -243,10 +242,9 @@ webpackJsonp([1],{
 	            template: __webpack_require__(102),
 	            styles: [__webpack_require__(103)]
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof router_1.Router !== 'undefined' && router_1.Router) === 'function' && _a) || Object, (typeof (_b = typeof router_1.ActivatedRoute !== 'undefined' && router_1.ActivatedRoute) === 'function' && _b) || Object, (typeof (_c = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _c) || Object])
+	        __metadata('design:paramtypes', [router_1.Router, router_1.ActivatedRoute, http_1.Http])
 	    ], ChartCodeComponent);
 	    return ChartCodeComponent;
-	    var _a, _b, _c;
 	}());
 	exports.ChartCodeComponent = ChartCodeComponent;
 	
@@ -322,10 +320,9 @@ webpackJsonp([1],{
 	            selector: 'chart-description',
 	            template: "<div>{{description}}</div>"
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof router_1.ActivatedRoute !== 'undefined' && router_1.ActivatedRoute) === 'function' && _a) || Object, (typeof (_b = typeof common_service_1.CommonService !== 'undefined' && common_service_1.CommonService) === 'function' && _b) || Object])
+	        __metadata('design:paramtypes', [router_1.ActivatedRoute, common_service_1.CommonService])
 	    ], ChartDescriptionComponent);
 	    return ChartDescriptionComponent;
-	    var _a, _b;
 	}());
 	exports.ChartDescriptionComponent = ChartDescriptionComponent;
 	
@@ -361,7 +358,8 @@ webpackJsonp([1],{
 	        this.route.params.subscribe(function (params) {
 	            // todo implement using cached data
 	            _this.chartType = params['chartType'];
-	            _this.commonService.getChartData(_this.chartType).subscribe(function (data) {
+	            var func = _this.commonService.getChartData(_this.chartType);
+	            func.subscribe(function (data) {
 	                _this.graphData = data;
 	                _this.datasetKeys = Object.keys(_this.graphData["dataset"]);
 	            });
@@ -393,10 +391,9 @@ webpackJsonp([1],{
 	            template: __webpack_require__(107),
 	            styles: [__webpack_require__(108)]
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof router_1.ActivatedRoute !== 'undefined' && router_1.ActivatedRoute) === 'function' && _a) || Object, (typeof (_b = typeof common_service_1.CommonService !== 'undefined' && common_service_1.CommonService) === 'function' && _b) || Object])
+	        __metadata('design:paramtypes', [router_1.ActivatedRoute, common_service_1.CommonService])
 	    ], ChartEditorComponent);
 	    return ChartEditorComponent;
-	    var _a, _b;
 	}());
 	exports.ChartEditorComponent = ChartEditorComponent;
 	
@@ -486,7 +483,7 @@ webpackJsonp([1],{
 	    });
 	    __decorate([
 	        core_1.ViewChild('dynamicComponentContainer', { read: core_1.ViewContainerRef }), 
-	        __metadata('design:type', (typeof (_a = typeof core_1.ViewContainerRef !== 'undefined' && core_1.ViewContainerRef) === 'function' && _a) || Object)
+	        __metadata('design:type', core_1.ViewContainerRef)
 	    ], ChartDetailsComponent.prototype, "dynamicComponentContainer", void 0);
 	    __decorate([
 	        core_1.Input(), 
@@ -501,10 +498,9 @@ webpackJsonp([1],{
 	            ],
 	            template: "<div #dynamicComponentContainer></div>"
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_b = typeof core_1.ComponentFactoryResolver !== 'undefined' && core_1.ComponentFactoryResolver) === 'function' && _b) || Object])
+	        __metadata('design:paramtypes', [core_1.ComponentFactoryResolver])
 	    ], ChartDetailsComponent);
 	    return ChartDetailsComponent;
-	    var _a, _b;
 	}());
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.default = ChartDetailsComponent;

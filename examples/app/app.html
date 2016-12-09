@@ -1,0 +1,27 @@
+<header class="app-header" style="background-color: #d8d8d8;cursor: pointer;height: 63px;">
+	<div class="w header attop">
+			<div class="c">
+				<div class="lf logo">
+						<a href="index.html">
+							<img src="../assets/images/uvCharts-Logo.png" [routerLink]="'/dashboard'"/>
+						</a>
+				</div>
+				<div class="nav rf">
+					<ul style="list-style:none;padding-top: 2px;display: inline-block;">
+						<li>
+							<a href="index.html#features">Features</a>
+						</li><li>
+							<a href="documentation.html">Documentation</a>
+						</li>
+					</ul>
+					<a href="https://github.com/Imaginea/uvCharts/releases/download/1.1.0/uvcharts-1.1.0.zip">
+						<button class="download">Download</button>
+					</a>
+				</div>
+				<a target="_blank" href="https://github.com/imaginea/uvCharts"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+				</div>
+		</div>
+</header>
+<main class="app-container" style="margin:1.5em;">
+	<router-outlet></router-outlet>
+</main>

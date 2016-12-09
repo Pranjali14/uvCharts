@@ -1,0 +1,64 @@
+.table {
+    /*border: 1px solid #DEDEDE;*/
+}
+
+.table td, .table th {
+    /*padding: 18px;*/
+    text-align: center;
+}
+
+.empty-cell {
+    padding: 26px;
+}
+input {
+    width: 50px;
+    padding: 2px 4px 2px;
+    text-align: right;
+    border: 1px solid #DEDEDE;
+}
+
+ul.category-data-list {
+    display: inline-block;
+    list-style: none;
+}
+
+.category-data-list span {
+    padding: 10px;
+    display: inline-block;
+    text-align: right;
+}
+
+ul.category-data-list:not(:first-of-type) .category-data-name {
+    display: none;
+}
+
+span.category-data-value {
+    width: 50px;
+}
+
+span.category-data-input-value {
+    width: 70px;
+}
+
+.category-heading-list {
+    list-style: none;
+}
+
+.category-heading-item {
+    display: inline-block;
+}
+
+span.category-data-name {
+    width: 150px;
+}
+
+.color-palette-wrapper select, h4{
+    display: inline;
+}
+/*ul.category-data-list:nth-child(2) span.category-data-name {*/
+    /*float: left;*/
+/*}*/
+
+/*ul.category-data-list:nth-child(2) span.category-data-input-value {*/
+    /*float: right;*/
+/*}*/

@@ -1,0 +1,72 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #dadada;
+    box-shadow: 0px 3px 2px #dddddd;
+    z-index: 100;
+    width: 100%;
+}
+.header.attop {
+    box-shadow: 0px 0px 0px #eee;
+}
+
+.c {
+    width: 960px;
+    margin: 0 auto;
+}
+.logo {
+    font-family: Arial;
+    font-size: 40px;
+    padding: 0px 2px;
+}
+.lf {
+    float: left;
+}
+a img {
+    border: 0;
+}
+.rf {
+    float: right;
+}
+.rf ul {
+    list-style: none;
+    padding-top: 2px;
+    display: inline-block;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+.nav li {
+    display: inline-block;
+    text-align: center;
+}
+.nav li a {
+    text-decoration: none;
+    color: #888;
+    padding: 16px 16px;
+    border-top: 2px solid #fff;
+    font-family: "Cabin Condensed" /*border-bottom: 2px solid #47494d;*/;
+}
+.nav ul a:hover {
+    color: #FF5C00;
+    border-top: 2px solid #FF5C00;
+}
+button.download {
+    font-family: "Cabin Condensed";
+    margin-left: 10px;
+    font-size: 16px;
+    padding: 6px 14px;
+    color: #fff;
+    border: 1px solid #FF7F08;
+    border-radius: 2px;
+    background: #ff5c00;
+}
+a {
+    -webkit-transition: color 200ms linear 0s,color 200ms linear 0s;
+    -moz-transition: color 200ms linear 0s,color 200ms linear 0s;
+    -o-transition: color 200ms linear 0s,color 200ms linear 0s;
+    -ms-transition: color 200ms linear 0s,color 200ms linear 0s;
+    transition: color 200ms linear 0s,color 200ms linear 0s;
+    border: 0;
+}

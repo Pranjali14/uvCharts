@@ -1,0 +1,41 @@
+.nav-pills li {
+    cursor: pointer;
+}
+
+.tab-content {
+    position: relative;
+}
+
+.tab-content pre {
+    background: #FFFFFF;
+}
+
+.copy-to-clipboard {
+    display: none;
+    position: absolute;
+    right: 20px;
+    z-index: 2;
+    top: 20px;
+    width: 140px;
+}
+
+.code-content {
+    overflow: hidden;
+    height: 0;
+    border: 1px solid #f8f8f8;
+}
+
+.button {
+    border: 1px solid #AAAAAA;
+    border-radius: 2px;
+    padding: 6px 10px;
+}
+
+.button:hover {
+  color: #fff;
+  background-color: #337ab7;
+}
+
+.tab-content:hover .copy-to-clipboard {
+  display: block;
+}
